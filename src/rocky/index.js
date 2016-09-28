@@ -30,33 +30,33 @@ rocky.on('draw', function(event) {
   var ctx = event.context;
 
   // Custom Image colors
-var mappingColor = {'0':'000000','1':'000055','2':'0000aa','3':'0000ff','4':'005500','5':'005555','6':'0055aa','7':'0055ff','8':'00aa00','9':'00aa55','a':'00aaaa','b':'00aaff','c':'00ff00','d':'00ff55','e':'00ffaa','f':'00ffff','g':'550000','h':'550055','i':'5500aa','j':'5500ff','k':'555500','l':'555555','m':'5555aa','n':'5555ff','o':'55aa00','p':'55aa55','q':'55aaaa','r':'55aaff','s':'55ff00','t':'55ff55','u':'55ffaa','v':'55ffff','w':'aa0000','x':'aa0055','y':'aa00aa','z':'aa00ff','A':'aa5500','B':'aa5555','C':'aa55aa','D':'aa55ff','E':'aaaa00','F':'aaaa55','G':'aaaaaa','H':'ffffff','I':'aaaaff','J':'aaff00','K':'aaff55','L':'aaffaa','M':'aaffff','N':'ff0000','O':'ff0055','P':'ff00aa','Q':'ff00ff','R':'ff5500','S':'ff5555','T':'ff55aa','U':'ff55ff','V':'ffaa00','W':'ffaa55','X':'ffaaaa','Y':'ffaaff','Z':'ffff00','@':'ffff55','#':'ffffaa'};
-
-// Add Custom Image Drawing function
-ctx.drawRockyImage = function(img, x, y){  
-  for (var i=0; i < img.height; i++){
-    for (var j=0; j<img.width; j++){
-      var pixelChar = img.src.substring((i*img.width)+j, (i*img.width)+j+1);
-      var pixelColor = '#' + mappingColor[pixelChar]; 
-      ctx.fillStyle = pixelColor;
-      ctx.fillRect(j+x,i+y,1,1);
-    }
-  }
-};
-
+  var mappingColor = {'0':'000000','1':'000055','2':'0000aa','3':'0000ff','4':'005500','5':'005555','6':'0055aa','7':'0055ff','8':'00aa00','9':'00aa55','a':'00aaaa','b':'00aaff','c':'00ff00','d':'00ff55','e':'00ffaa','f':'00ffff','g':'550000','h':'550055','i':'5500aa','j':'5500ff','k':'555500','l':'555555','m':'5555aa','n':'5555ff','o':'55aa00','p':'55aa55','q':'55aaaa','r':'55aaff','s':'55ff00','t':'55ff55','u':'55ffaa','v':'55ffff','w':'aa0000','x':'aa0055','y':'aa00aa','z':'aa00ff','A':'aa5500','B':'aa5555','C':'aa55aa','D':'aa55ff','E':'aaaa00','F':'aaaa55','G':'aaaaaa','H':'ffffff','I':'aaaaff','J':'aaff00','K':'aaff55','L':'aaffaa','M':'aaffff','N':'ff0000','O':'ff0055','P':'ff00aa','Q':'ff00ff','R':'ff5500','S':'ff5555','T':'ff55aa','U':'ff55ff','V':'ffaa00','W':'ffaa55','X':'ffaaaa','Y':'ffaaff','Z':'ffff00','@':'ffff55','#':'ffffaa'};
   
-// Add Custom Image Drawing function
-ctx.drawRockySubImage = function (img, sx, sy, sw, sh, x, y){  
-  for (var i=sy; i < sy+sh; i++){
-    for (var j=sx; j< sx+sw; j++){
-      var pixelChar = img.src.substring((i*img.width)+j, (i*img.width)+j+1);
-      var pixelColor = '#' + mappingColor[pixelChar]; 
-      ctx.fillStyle = pixelColor;
-      ctx.fillRect(j+x-sx,i+y-sy,1,1);
+  // Add Custom Image Drawing function
+  ctx.drawRockyImage = function(img, x, y){  
+    for (var i=0; i < img.height; i++){
+      for (var j=0; j<img.width; j++){
+        var pixelChar = img.src.substring((i*img.width)+j, (i*img.width)+j+1);
+        var pixelColor = '#' + mappingColor[pixelChar]; 
+        ctx.fillStyle = pixelColor;
+        ctx.fillRect(j+x,i+y,1,1);
+      }
     }
-  }
-};
-
+  };
+  
+    
+  // Add Custom Sub Image Drawing function
+  ctx.drawRockySubImage = function (img, sx, sy, sw, sh, x, y){  
+    for (var i=sy; i < sy+sh; i++){
+      for (var j=sx; j< sx+sw; j++){
+        var pixelChar = img.src.substring((i*img.width)+j, (i*img.width)+j+1);
+        var pixelColor = '#' + mappingColor[pixelChar]; 
+        ctx.fillStyle = pixelColor;
+        ctx.fillRect(j+x-sx,i+y-sy,1,1);
+      }
+    }
+  };
+  
   
   // set the individual digit widths
   var digitWidth  = 16;
