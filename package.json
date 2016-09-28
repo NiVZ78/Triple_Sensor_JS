@@ -1,0 +1,26 @@
+{
+    "author": "NiVZ",
+    "dependencies": {},
+    "keywords": [],
+    "name": "triple-sensor-js",
+    "pebble": {
+        "displayName": "TRIPLE SENSOR JS",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "rocky",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "237f801c-0e58-45c7-8f6f-52e9e01780d2",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
